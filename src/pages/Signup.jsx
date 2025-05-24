@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Signup = () => {
@@ -19,6 +18,7 @@ const Signup = () => {
                   type={label === 'Password' ? 'password' : 'text'}
                   placeholder="Marry Doe"
                   className="w-full mt-1 p-2 border rounded focus:outline-[#6C25FF]"
+                  required={label !== 'Company name'} // This makes all fields except Company name required
                 />
               </div>
             ))}
@@ -28,10 +28,10 @@ const Signup = () => {
               </label>
               <div className="flex gap-4">
                 <label className="flex items-center gap-2">
-                  <input type="radio" name="agency" className="accent-[#6C25FF]" /> Yes
+                  <input type="radio" name="agency" className="accent-[#6C25FF]" required /> Yes
                 </label>
                 <label className="flex items-center gap-2">
-                  <input type="radio" name="agency" className="accent-[#6C25FF]" /> No
+                  <input type="radio" name="agency" className="accent-[#6C25FF]" required /> No
                 </label>
               </div>
             </div>
